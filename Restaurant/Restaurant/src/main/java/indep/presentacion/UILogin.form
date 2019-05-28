@@ -10,9 +10,8 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Restaurante Jimmy"/>
     <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
-      <Point value="[50, 50]"/>
+      <Point value="[0, 0]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -42,15 +41,25 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel3" pref="100" max="32767" attributes="0"/>
+                  <Component id="jLabel3" max="32767" attributes="0"/>
                   <Component id="jLabel2" max="32767" attributes="0"/>
+                  <Component id="bntEnter" alignment="0" min="-2" pref="130" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtUser" max="32767" attributes="0"/>
-                  <Component id="txtPass" pref="100" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtUser" pref="120" max="32767" attributes="0"/>
+                          <Component id="txtPass" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnExit" min="-2" pref="130" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -69,7 +78,12 @@
                   <Component id="jLabel3" max="32767" attributes="0"/>
                   <Component id="txtPass" pref="30" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="133" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="bntEnter" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btnExit" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,6 +110,22 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="txtPass">
+    </Component>
+    <Component class="javax.swing.JButton" name="bntEnter">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ingresar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bntEnterActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnExit">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salir"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExitActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
