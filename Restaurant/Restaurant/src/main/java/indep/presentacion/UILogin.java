@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package indep.presentacion;
 
-import indep.presentacion.*;
+import indep.dao.Conexion;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -120,9 +121,17 @@ public class UILogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void bntEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntEnterActionPerformed
-        dispose();
+        int v = validarNivel(txtUser.getText(), txtPass.getText());
         
-        new UIPrincipal().setVisible(true);
+        UIIndex index = new UIIndex();
+        index.setLevel(v);
+        
+        if(v != 0){
+            dispose();
+            new UIPrincipal().setVisible(true);
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Datos incorrectos");
     }//GEN-LAST:event_bntEnterActionPerformed
 
     /**
@@ -171,4 +180,16 @@ public class UILogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * metodo para habilitar las opciones de la aplicación dependiendo
+     * el nivel del usuario
+     * @param user
+     * @param pass
+     * @return regreas el nivel del usuario
+     */
+    private int validarNivel(String user, String pass){
+        Conexion c = new Conexion();
+        
+        return c.getLevel(user, pass);
+    }
 }

@@ -17,16 +17,24 @@ import javax.swing.JMenuItem;
 public class UIIndex extends JFrame {
     
     private final JMenu menuOptions;
-    private final JMenuItem itemReport, itemExit;
+    private final JMenuItem itemReport, itemLogout, itemExit;
     
-    int level = 1;
+    private static int level = 0;
+    
+    public void setLevel(int l){ level = l; }
+    public int getLevel(){ return level; }
     
     public UIIndex(){
         JMenuBar bar = new JMenuBar();
         menuOptions = new JMenu("Opciones");
         itemReport = new JMenuItem("Reportes");
+        itemLogout = new JMenuItem("Logout");
         itemExit = new JMenuItem("Salir");
-        menuOptions.add(itemReport);
+        
+        if(getLevel() == 1)
+            menuOptions.add(itemReport);      
+        
+        menuOptions.add(itemLogout);
         menuOptions.add(itemExit);
         
         bar.add(menuOptions);
@@ -37,19 +45,14 @@ public class UIIndex extends JFrame {
         itemReport.addActionListener(event -> {
             new UIReport().setVisible(true);
         });
+        itemLogout.addActionListener(event -> {
+            dispose();
+            new UILogin().setVisible(true);
+        });
         itemExit.addActionListener(event -> {
             System.exit(0);
         });
         
         //validarNivel(level);
-    }
-    
-    /**
-     * metodo para habilitar las opciones de la aplicación dependiendo
-     * el nivel del usuario
-     * @param level 
-     */
-    public void validarNivel(int level){
-            
     }
 }
