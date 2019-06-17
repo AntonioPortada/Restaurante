@@ -16,10 +16,40 @@ import javax.swing.JMenuItem;
  */
 public class UIIndex extends JFrame {
     
+    private final JMenu menuOptions;
+    private final JMenuItem itemReport, itemExit;
+    
+    int level = 1;
+    
     public UIIndex(){
         JMenuBar bar = new JMenuBar();
-        JMenu menu = new JMenu("Opciones");
-        bar.add(menu);
+        menuOptions = new JMenu("Opciones");
+        itemReport = new JMenuItem("Reportes");
+        itemExit = new JMenuItem("Salir");
+        menuOptions.add(itemReport);
+        menuOptions.add(itemExit);
+        
+        bar.add(menuOptions);
+        
         setJMenuBar(bar);
+        
+        //Eventos del menu
+        itemReport.addActionListener(event -> {
+            new UIReport().setVisible(true);
+        });
+        itemExit.addActionListener(event -> {
+            System.exit(0);
+        });
+        
+        //validarNivel(level);
+    }
+    
+    /**
+     * metodo para habilitar las opciones de la aplicación dependiendo
+     * el nivel del usuario
+     * @param level 
+     */
+    public void validarNivel(int level){
+            
     }
 }
