@@ -43,6 +43,7 @@ public class UIIndex extends JFrame {
         
         //Eventos del menu
         itemReport.addActionListener(event -> {
+            dispose();
             new UIReport().setVisible(true);
         });
         itemLogout.addActionListener(event -> {
@@ -54,5 +55,6 @@ public class UIIndex extends JFrame {
         });
         
         //validarNivel(level);
+        setExtendedState(MAXIMIZED_BOTH);
     }
 }
