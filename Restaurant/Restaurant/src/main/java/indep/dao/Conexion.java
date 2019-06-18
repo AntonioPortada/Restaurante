@@ -24,12 +24,12 @@ public class Conexion {
     private void loadConection(){
         try{
             //para trabajar con oracle
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.getConnection("jdbc:oracle:thin:@172.29.1.35:1521/produccion", "produccion", "produccion");
+            //Class.forName("oracle.jdbc.driver.OracleDriver");
+            //con = DriverManager.getConnection("jdbc:oracle:thin:@172.29.1.35:1521/produccion", "produccion", "produccion");
             
             //para trabajar con MySqls
-            //Class.forName("");
-            //con = DriverManager.getConnection("", "root", "");
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/produccion", "root", "");
         } 
         catch(ClassNotFoundException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
